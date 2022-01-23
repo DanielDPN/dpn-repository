@@ -100,6 +100,37 @@
           }
         }
       }
+    },
+    "dpn-repository": {
+      "projectType": "library",
+      "root": "projects/dpn-repository",
+      "sourceRoot": "projects/dpn-repository/src",
+      "prefix": "dpn",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/dpn-repository/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/dpn-repository/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/dpn-repository/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/dpn-repository/src/test.ts",
+            "tsConfig": "projects/dpn-repository/tsconfig.spec.json",
+            "karmaConfig": "projects/dpn-repository/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "dpn-repository-app"
